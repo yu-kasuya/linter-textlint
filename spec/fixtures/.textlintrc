@@ -4,6 +4,7 @@
   },
   "plugins": [
     "review",
-    "asciidoc-loose"
+    "asciidoc-loose",
+    "rst"
   ]
 }

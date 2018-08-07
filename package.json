@@ -58,7 +58,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
     "textlint-plugin-asciidoc-loose": "^1.0.1",
-    "textlint-plugin-review": "^0.3.3"
+    "textlint-plugin-review": "^0.3.3",
+    "textlint-plugin-rst": "^0.1.1"
   },
   "eslintConfig": {
     "rules": {

@@ -6,6 +6,7 @@ const good = path.join(__dirname, 'fixtures', 'good.md');
 const markdown = path.join(__dirname, 'fixtures', 'bad.md');
 const review = path.join(__dirname, 'fixtures', 'bad.re');
 const asciidoc = path.join(__dirname, 'fixtures', 'bad.asciidoc');
+const rst = path.join(__dirname, 'fixtures', 'bad.rst');
 const textlintrcPath = path.join(__dirname, 'fixtures', '.textlintrc');
 const textlintRulesDir = path.join(__dirname, '..', 'node_modules');
 
@@ -67,6 +68,17 @@ describe('The textlint provider for Linter', () => {
     it('finds at least one message', () => {
       waitsForPromise(() =>
         atom.workspace.open(asciidoc)
+          .then(editor => lint(editor))
+          .then((messages) => {
+            expect(messages.length).toBeGreaterThan(0);
+          }));
+    });
+  });
+
+  describe('checks bad.rst and', () => {
+    it('finds at least one message', () => {
+      waitsForPromise(() =>
+        atom.workspace.open(rst)
           .then(editor => lint(editor))
           .then((messages) => {
             expect(messages.length).toBeGreaterThan(0);
